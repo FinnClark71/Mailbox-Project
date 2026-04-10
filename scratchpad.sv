@@ -39,6 +39,7 @@ module scratchpad #(
     always_ff @(posedge clk) begin
         if (rst) begin
             rvalid_q <= 0;
+            rdata_q  <= '0;   // fix the clear on reset
         end else begin
 
             // Write
