@@ -63,6 +63,7 @@ module freelist #(
 			wr_ptr      <= 0;
 			count       <= 0;
 			pop_valid_q <= 0;
+			pop_data_q  <= '0;   //fix that prevents scratchpad unknown states
 		end else begin
 			/*
 			// Default: no pop output this cycle
