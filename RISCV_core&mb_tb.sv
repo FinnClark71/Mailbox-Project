@@ -307,8 +307,7 @@ module RISCV_core_top_tb;
         reset = 0;
         $display("[Cycle 0] Reset de-asserted - core is running");
         $display("");
-        $display("  NOTE: Mailbox freelist initialises ~256 cycles after reset.");
-        $display("  Test programs using the mailbox must poll STATUS bit2 first.");
+        $display("  Mailbox freelist initialises ~256 cycles after reset.");
         $display("");
     end
 
