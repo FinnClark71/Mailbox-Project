@@ -136,13 +136,9 @@ module RISCV_core_top_tb;
         end
         if (!reset && cycle_count == 50) begin
             if (zero_fetch_count >= 45) begin
-                $display("");
                 $display(" BRAM EMPTY (all zero/X fetches)");
-                $display("");
             end else begin
-                $display("");
-                $display("  >> BRAM loaded, non-zero instructions detected");
-                $display("");
+                $display("  >> BRAM loaded ok");
             end
         end
     end
