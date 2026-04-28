@@ -1,0 +1,322 @@
+HEX TEST INSTRUCTION LISTINGS
+BRISKI + Tinsel-Style Mailbox Project
+--------------------------------------------------------------------------
+
+Registers used as x0-x9 (ABI: x0=zero, always 0).
+MMIO base address: 0x8000 (loaded via LUI x1, 8).
+BRAM PASS address: 0x3FC word offset = BRAM[0xFF].
+PASS condition: SW 1 to BRAM[0xFF].
+
+MMIO Register Map (byte offsets from 0x8000):
+  0x00  STATUS    [R]   bit0=tx_ready, bit1=rx_has_msg, bit2=init_done
+  0x04  TX_DEST   [W]   destination core ID
+  0x08  TX_LEN    [W]   message length metadata
+  0x0C  TX_SEND   [W]   write 1 to send; read = last allocated slot
+  0x10  RX_POP    [W/R] write 1 to pop; read = {len[7:0], slot[7:0]}
+  0x14  REL_SLOT  [W]   write slot number to release refcount
+
+
+
+TEST 1 — BRISKI Core: Register Writes (ADDI, ADD)
+
+  [ 0]  0x00a00093   ADDI    x1, x0, 10
+  [ 1]  0x01400113   ADDI    x2, x0, 20
+  [ 2]  0x002081b3   ADD     x3, x1, x2
+  [ 3]  0x3fc00293   ADDI    x5, x0, 1020
+  [ 4]  0x00100213   ADDI    x4, x0, 1
+  [ 5]  0x0042a023   SW      x4, 0(x5)
+  [ 6]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 2 — BRISKI Core: Load and Store (LW, SW)
+
+  [ 0]  0x02a00093   ADDI    x1, x0, 42
+  [ 1]  0x00400113   ADDI    x2, x0, 4
+  [ 2]  0x00112023   SW      x1, 0(x2)
+  [ 3]  0x00012183   LW      x3, 0(x2)
+  [ 4]  0x02a00213   ADDI    x4, x0, 42
+  [ 5]  0x00419663   BNE     x3, x4, 12
+  [ 6]  0x3fc00293   ADDI    x5, x0, 1020
+  [ 7]  0x00100313   ADDI    x6, x0, 1
+  [ 8]  0x0062a023   SW      x6, 0(x5)
+  [ 9]  0x0000006f   JAL     x0, 0
+  [10]  0xdeadc1b7   LUI     x3, 0xDEADC
+  [11]  0xeef18193   ADDI    x3, x3, -273
+  [12]  0x3fc00293   ADDI    x5, x0, 1020
+  [13]  0x0032a023   SW      x3, 0(x5)
+  [14]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 3 — BRISKI Core: Branch Instructions (BNE, BLT)
+
+  [ 0]  0x00500093   ADDI    x1, x0, 5
+  [ 1]  0x00500113   ADDI    x2, x0, 5
+  [ 2]  0x00209863   BNE     x1, x2, 16
+  [ 3]  0x00a00193   ADDI    x3, x0, 10
+  [ 4]  0x00300213   ADDI    x4, x0, 3
+  [ 5]  0x0041c463   BLT     x3, x4, 8
+  [ 6]  0x3fc00293   ADDI    x5, x0, 1020
+  [ 7]  0x00100313   ADDI    x6, x0, 1
+  [ 8]  0x0062a023   SW      x6, 0(x5)
+  [ 9]  0x0000006f   JAL     x0, 0
+  [10]  0xdeadc337   LUI     x6, 0xDEADC
+  [11]  0xeef30313   ADDI    x6, x6, -273
+  [12]  0x3fc00293   ADDI    x5, x0, 1020
+  [13]  0x0062a023   SW      x6, 0(x5)
+  [14]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 4 — BRISKI Core: ALU Operations (SUB, XOR, OR)
+
+  [ 0]  0x00f00093   ADDI    x1, x0, 15
+  [ 1]  0x00900113   ADDI    x2, x0, 9
+  [ 2]  0x402081b3   SUB     x3, x1, x2
+  [ 3]  0x00600213   ADDI    x4, x0, 6
+  [ 4]  0x02419063   BNE     x3, x4, 32
+  [ 5]  0x0020c2b3   XOR     x5, x1, x2
+  [ 6]  0x00429c63   BNE     x5, x4, 24
+  [ 7]  0x0020e333   OR      x6, x1, x2
+  [ 8]  0x00f00393   ADDI    x7, x0, 15
+  [ 9]  0x00731663   BNE     x6, x7, 12
+  [10]  0x3fc00413   ADDI    x8, x0, 1020
+  [11]  0x00100493   ADDI    x9, x0, 1
+  [12]  0x00942023   SW      x9, 0(x8)
+  [13]  0x0000006f   JAL     x0, 0
+  [14]  0xdeadc4b7   LUI     x9, 0xDEADC
+  [15]  0xeef48493   ADDI    x9, x9, -273
+  [16]  0x3fc00413   ADDI    x8, x0, 1020
+  [17]  0x00942023   SW      x9, 0(x8)
+  [18]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 5 — Single Core + Mailbox: MMIO Poll and STATUS Register
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x00100193   ADDI    x3, x0, 1
+  [ 5]  0x0030a223   SW      x3, 4(x1)
+  [ 6]  0x00800193   ADDI    x3, x0, 8
+  [ 7]  0x0030a423   SW      x3, 8(x1)
+  [ 8]  0x0030a623   SW      x3, 12(x1)
+  [ 9]  0x00000013   NOP
+  [10]  0x00000013   NOP
+  [11]  0x00000013   NOP
+  [12]  0x00000013   NOP
+  [13]  0x00000013   NOP
+  [14]  0x00000013   NOP
+  [15]  0x00000013   NOP
+  [16]  0x00000013   NOP
+  [17]  0x3fc00293   ADDI    x5, x0, 1020
+  [18]  0x00100213   ADDI    x4, x0, 1
+  [19]  0x0042a023   SW      x4, 0(x5)
+  [20]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 6 — Single Core + Mailbox: TX -> RX Loopback, len=0xAB
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x00500193   ADDI    x3, x0, 5
+  [ 5]  0x0030a223   SW      x3, 4(x1)
+  [ 6]  0x0ab00193   ADDI    x3, x0, 171
+  [ 7]  0x0030a423   SW      x3, 8(x1)
+  [ 8]  0x00100193   ADDI    x3, x0, 1
+  [ 9]  0x0030a623   SW      x3, 12(x1)
+  [10]  0x0000a103   LW      x2, 0(x1)
+  [11]  0x00217113   ANDI    x2, x2, 2
+  [12]  0xfe010ce3   BEQ     x2, x0, -8
+  [13]  0x0030a823   SW      x3, 16(x1)
+  [14]  0x00000013   NOP
+  [15]  0x00000013   NOP
+  [16]  0x00000013   NOP
+  [17]  0x00000013   NOP
+  [18]  0x0100a203   LW      x4, 16(x1)
+  [19]  0x00825293   SRLI    x5, x4, 8
+  [20]  0x0ff2f293   ANDI    x5, x5, 255
+  [21]  0x0ab00313   ADDI    x6, x0, 171
+  [22]  0x00629a63   BNE     x5, x6, 20
+  [23]  0x0ff27213   ANDI    x4, x4, 255
+  [24]  0x0040aa23   SW      x4, 20(x1)
+  [25]  0x3fc00293   ADDI    x5, x0, 1020
+  [26]  0x00100213   ADDI    x4, x0, 1
+  [27]  0x0042a023   SW      x4, 0(x5)
+  [28]  0x0000006f   JAL     x0, 0
+  [29]  0xdeadc237   LUI     x4, 0xDEADC
+  [30]  0xeef20213   ADDI    x4, x4, -273
+  [31]  0x3fc00293   ADDI    x5, x0, 1020
+  [32]  0x0042a023   SW      x4, 0(x5)
+  [33]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 7 — Single Core + Mailbox: Slot Read-Back and REL_SLOT
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x00300193   ADDI    x3, x0, 3
+  [ 5]  0x0030a223   SW      x3, 4(x1)
+  [ 6]  0x04200193   ADDI    x3, x0, 66
+  [ 7]  0x0030a423   SW      x3, 8(x1)
+  [ 8]  0x00100193   ADDI    x3, x0, 1
+  [ 9]  0x0030a623   SW      x3, 12(x1)
+  [10]  0x00c0a283   LW      x5, 12(x1)
+  [11]  0x00000013   NOP
+  [12]  0x00000013   NOP
+  [13]  0x00000013   NOP
+  [14]  0x00000013   NOP
+  [15]  0x0082d313   SRLI    x6, x5, 8
+  [16]  0x0ff2f293   ANDI    x5, x5, 255
+  [17]  0x0050aa23   SW      x5, 20(x1)
+  [18]  0x3fc00413   ADDI    x8, x0, 1020
+  [19]  0x00100393   ADDI    x7, x0, 1
+  [20]  0x00742023   SW      x7, 0(x8)
+  [21]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 8 CORE 0 — Dual Core: Unidirectional Sender (TX_LEN=0xC0)
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x00100193   ADDI    x3, x0, 1
+  [ 5]  0x0030a223   SW      x3, 4(x1)
+  [ 6]  0x0c000193   ADDI    x3, x0, 192
+  [ 7]  0x0030a423   SW      x3, 8(x1)
+  [ 8]  0x00100193   ADDI    x3, x0, 1
+  [ 9]  0x0030a623   SW      x3, 12(x1)
+  [10]  0x3fc00293   ADDI    x5, x0, 1020
+  [11]  0x00100213   ADDI    x4, x0, 1
+  [12]  0x0042a023   SW      x4, 0(x5)
+  [13]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 8 CORE 1 — Dual Core: Unidirectional Receiver and Verifier
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x0000a103   LW      x2, 0(x1)
+  [ 5]  0x00217113   ANDI    x2, x2, 2
+  [ 6]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 7]  0x00100193   ADDI    x3, x0, 1
+  [ 8]  0x0030a823   SW      x3, 16(x1)
+  [ 9]  0x00000013   NOP
+  [10]  0x00000013   NOP
+  [11]  0x00000013   NOP
+  [12]  0x00000013   NOP
+  [13]  0x0100a203   LW      x4, 16(x1)
+  [14]  0x00825293   SRLI    x5, x4, 8
+  [15]  0x0ff2f293   ANDI    x5, x5, 255
+  [16]  0x0c000313   ADDI    x6, x0, 192
+  [17]  0x00629e63   BNE     x5, x6, 28
+  [18]  0x0ff27213   ANDI    x4, x4, 255
+  [19]  0x0040aa23   SW      x4, 20(x1)
+  [20]  0x3fc00293   ADDI    x5, x0, 1020
+  [21]  0x00100213   ADDI    x4, x0, 1
+  [22]  0x0042a023   SW      x4, 0(x5)
+  [23]  0x0000006f   JAL     x0, 0
+  [24]  0xdeadc237   LUI     x4, 0xDEADC
+  [25]  0xeef20213   ADDI    x4, x4, -273
+  [26]  0x3fc00293   ADDI    x5, x0, 1020
+  [27]  0x0042a023   SW      x4, 0(x5)
+  [28]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 9 CORE 0 — Ping-Pong: ALU Sender and Reply Verifier
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x01100193   ADDI    x3, x0, 17
+  [ 5]  0x00319213   SLLI    x4, x3, 3
+  [ 6]  0x00219293   SLLI    x5, x3, 2
+  [ 7]  0x00520233   ADD     x4, x4, x5
+  [ 8]  0x00320233   ADD     x4, x4, x3
+  [ 9]  0x0aa24213   XORI    x4, x4, 170
+  [10]  0x00100393   ADDI    x7, x0, 1
+  [11]  0x0070a223   SW      x7, 4(x1)
+  [12]  0x0040a423   SW      x4, 8(x1)
+  [13]  0x0070a623   SW      x7, 12(x1)
+  [14]  0x0000a103   LW      x2, 0(x1)
+  [15]  0x00217113   ANDI    x2, x2, 2
+  [16]  0xfe010ce3   BEQ     x2, x0, -8
+  [17]  0x0070a823   SW      x7, 16(x1)
+  [18]  0x00000013   NOP
+  [19]  0x00000013   NOP
+  [20]  0x00000013   NOP
+  [21]  0x00000013   NOP
+  [22]  0x0100a283   LW      x5, 16(x1)
+  [23]  0x0082d313   SRLI    x6, x5, 8
+  [24]  0x0ff37313   ANDI    x6, x6, 255
+  [25]  0x0bb00493   ADDI    x9, x0, 187
+  [26]  0x02931063   BNE     x6, x9, 32
+  [27]  0x0ff2f293   ANDI    x5, x5, 255
+  [28]  0x0050aa23   SW      x5, 20(x1)
+  [29]  0x3fc00413   ADDI    x8, x0, 1020
+  [30]  0x00100393   ADDI    x7, x0, 1
+  [31]  0x00742023   SW      x7, 0(x8)
+  [32]  0x0000006f   JAL     x0, 0
+  [33]  0x00000013   NOP
+  [34]  0xdeadc237   LUI     x4, 0xDEADC
+  [35]  0xeef20213   ADDI    x4, x4, -273
+  [36]  0x3fc00413   ADDI    x8, x0, 1020
+  [37]  0x00442023   SW      x4, 0(x8)
+  [38]  0x0000006f   JAL     x0, 0
+
+
+
+TEST 9 CORE 1 — Ping-Pong: ALU Receiver and Responder
+
+  [ 0]  0x000080b7   LUI     x1, 0x00008
+  [ 1]  0x0000a103   LW      x2, 0(x1)
+  [ 2]  0x00417113   ANDI    x2, x2, 4
+  [ 3]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 4]  0x0000a103   LW      x2, 0(x1)
+  [ 5]  0x00217113   ANDI    x2, x2, 2
+  [ 6]  0xfe010ce3   BEQ     x2, x0, -8
+  [ 7]  0x00100393   ADDI    x7, x0, 1
+  [ 8]  0x0070a823   SW      x7, 16(x1)
+  [ 9]  0x00000013   NOP
+  [10]  0x00000013   NOP
+  [11]  0x00000013   NOP
+  [12]  0x00000013   NOP
+  [13]  0x0100a203   LW      x4, 16(x1)
+  [14]  0x00825193   SRLI    x3, x4, 8
+  [15]  0x0ff1f193   ANDI    x3, x3, 255
+  [16]  0x07700393   ADDI    x7, x0, 119
+  [17]  0x02719c63   BNE     x3, x7, 56
+  [18]  0x0ff27293   ANDI    x5, x4, 255
+  [19]  0x0050aa23   SW      x5, 20(x1)
+  [20]  0x00119313   SLLI    x6, x3, 1
+  [21]  0x0ff37313   ANDI    x6, x6, 255
+  [22]  0x05534313   XORI    x6, x6, 85
+  [23]  0x00000393   ADDI    x7, x0, 0
+  [24]  0x0070a223   SW      x7, 4(x1)
+  [25]  0x0060a423   SW      x6, 8(x1)
+  [26]  0x00100393   ADDI    x7, x0, 1
+  [27]  0x0070a623   SW      x7, 12(x1)
+  [28]  0x3fc00413   ADDI    x8, x0, 1020
+  [29]  0x00742023   SW      x7, 0(x8)
+  [30]  0x0000006f   JAL     x0, 0
+  [31]  0xdeadc237   LUI     x4, 0xDEADC
+  [32]  0xeef20213   ADDI    x4, x4, -273
+  [33]  0x3fc00413   ADDI    x8, x0, 1020
+  [34]  0x00442023   SW      x4, 0(x8)
+  [35]  0x0000006f   JAL     x0, 0
