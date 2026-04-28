@@ -1,0 +1,689 @@
+--------------------------------------------
+  BRISKI Core with Mailbox tx/rx communication test 
+--------------------------------------------
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'RISCV_core_top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 6226.938 ; gain = 0.000
+run 5 ms
+[Cycle 0] Reset de-asserted - core is running
+
+  Testbench will drain TX queue and re-inject as RX automatically.
+  Mailbox init_done fires ~256 cycles after reset.
+
+[Cycle 0] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 1] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 2] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 3] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 4] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 5] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 6] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 7] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 8] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 9] FETCH: rom_addr=0 (0x000)  instr=0x000080b7
+[Cycle 10] MMIO READ:  byte_offset=0x00  -> 0x000080b7
+[Cycle 11] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 12] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 13] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 14] Thread 0: x1 <- 0x00008000
+[Cycle 14] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 15] Thread 0: x1 <- 0x00008000
+[Cycle 15] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 16] Thread 0: x1 <- 0x00008000
+[Cycle 16] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 17] Thread 1: x1 <- 0x00008000
+[Cycle 17] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 18] Thread 2: x1 <- 0x00008000
+[Cycle 18] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 19] Thread 3: x1 <- 0x00008000
+[Cycle 19] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 20] Thread 4: x1 <- 0x00008000
+[Cycle 20] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 21] Thread 5: x1 <- 0x00008000
+[Cycle 21] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 22] Thread 6: x1 <- 0x00008000
+[Cycle 22] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 23] Thread 7: x1 <- 0x00008000
+[Cycle 23] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 24] Thread 8: x1 <- 0x00008000
+[Cycle 24] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 25] Thread 9: x1 <- 0x00008000
+[Cycle 25] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 26] Thread 10: x1 <- 0x00008000
+[Cycle 26] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 27] Thread 11: x1 <- 0x00008000
+[Cycle 27] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 28] Thread 12: x1 <- 0x00008000
+[Cycle 28] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 29] Thread 13: x1 <- 0x00008000
+[Cycle 29] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 30] Thread 14: x1 <- 0x00008000
+[Cycle 30] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 31] Thread 15: x1 <- 0x00008000
+[Cycle 31] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 32] Thread 0: x2 <- 0x00000000
+[Cycle 32] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 33] Thread 1: x2 <- 0x00000000
+[Cycle 33] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 34] Thread 2: x2 <- 0x00000000
+[Cycle 34] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 35] Thread 3: x2 <- 0x00000000
+[Cycle 35] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 36] Thread 4: x2 <- 0x00000000
+[Cycle 36] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 37] Thread 5: x2 <- 0x00000000
+[Cycle 37] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 38] Thread 6: x2 <- 0x00000000
+[Cycle 38] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 39] Thread 7: x2 <- 0x00000000
+[Cycle 39] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 40] Thread 8: x2 <- 0x00000000
+[Cycle 40] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 41] Thread 9: x2 <- 0x00000000
+[Cycle 41] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 42] Thread 10: x2 <- 0x00000000
+[Cycle 42] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 43] Thread 11: x2 <- 0x00000000
+[Cycle 43] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 44] Thread 12: x2 <- 0x00000000
+[Cycle 45] Thread 13: x2 <- 0x00000000
+[Cycle 46] Thread 14: x2 <- 0x00000000
+[Cycle 47] Thread 15: x2 <- 0x00000000
+[Cycle 48] Thread 0: x2 <- 0x00000000
+[Cycle 49] Thread 1: x2 <- 0x00000000
+  >> BRAM loaded ok
+[Cycle 50] Thread 2: x2 <- 0x00000000
+[Cycle 51] Thread 3: x2 <- 0x00000000
+[Cycle 52] Thread 4: x2 <- 0x00000000
+[Cycle 53] Thread 5: x2 <- 0x00000000
+[Cycle 54] Thread 6: x2 <- 0x00000000
+[Cycle 55] Thread 7: x2 <- 0x00000000
+[Cycle 56] Thread 8: x2 <- 0x00000000
+[Cycle 57] Thread 9: x2 <- 0x00000000
+[Cycle 58] Thread 10: x2 <- 0x00000000
+[Cycle 59] Thread 11: x2 <- 0x00000000
+[Cycle 60] Thread 12: x2 <- 0x00000000
+[Cycle 61] Thread 13: x2 <- 0x00000000
+[Cycle 62] Thread 14: x2 <- 0x00000000
+[Cycle 63] Thread 15: x2 <- 0x00000000
+[Cycle 76] MMIO READ:  byte_offset=0x00  -> 0x0000a103
+[Cycle 77] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 78] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 79] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 80] Thread 0: x2 <- 0x00000000
+[Cycle 80] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 81] Thread 1: x2 <- 0x00000000
+[Cycle 81] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 82] Thread 2: x2 <- 0x00000000
+[Cycle 82] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 83] Thread 3: x2 <- 0x00000000
+[Cycle 83] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 84] Thread 4: x2 <- 0x00000000
+[Cycle 84] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 85] Thread 5: x2 <- 0x00000000
+[Cycle 85] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 86] Thread 6: x2 <- 0x00000000
+[Cycle 86] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 87] Thread 7: x2 <- 0x00000000
+[Cycle 87] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 88] Thread 8: x2 <- 0x00000000
+[Cycle 88] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 89] Thread 9: x2 <- 0x00000000
+[Cycle 89] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 90] Thread 10: x2 <- 0x00000000
+[Cycle 90] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 91] Thread 11: x2 <- 0x00000000
+[Cycle 91] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 92] Thread 12: x2 <- 0x00000000
+[Cycle 93] Thread 13: x2 <- 0x00000000
+[Cycle 94] Thread 14: x2 <- 0x00000000
+[Cycle 95] Thread 15: x2 <- 0x00000000
+[Cycle 96] Thread 0: x2 <- 0x00000000
+[Cycle 97] Thread 1: x2 <- 0x00000000
+[Cycle 98] Thread 2: x2 <- 0x00000000
+[Cycle 99] Thread 3: x2 <- 0x00000000
+[Cycle 100] Thread 4: x2 <- 0x00000000
+[Cycle 101] Thread 5: x2 <- 0x00000000
+[Cycle 102] Thread 6: x2 <- 0x00000000
+[Cycle 103] Thread 7: x2 <- 0x00000000
+[Cycle 104] Thread 8: x2 <- 0x00000000
+[Cycle 105] Thread 9: x2 <- 0x00000000
+[Cycle 106] Thread 10: x2 <- 0x00000000
+[Cycle 107] Thread 11: x2 <- 0x00000000
+[Cycle 108] Thread 12: x2 <- 0x00000000
+[Cycle 109] Thread 13: x2 <- 0x00000000
+[Cycle 110] Thread 14: x2 <- 0x00000000
+[Cycle 111] Thread 15: x2 <- 0x00000000
+[Cycle 124] MMIO READ:  byte_offset=0x00  -> 0x0000a103
+[Cycle 125] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 126] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 127] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 128] Thread 0: x2 <- 0x00000000
+[Cycle 128] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 129] Thread 1: x2 <- 0x00000000
+[Cycle 129] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 130] Thread 2: x2 <- 0x00000000
+[Cycle 130] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 131] Thread 3: x2 <- 0x00000000
+[Cycle 131] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 132] Thread 4: x2 <- 0x00000000
+[Cycle 132] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 133] Thread 5: x2 <- 0x00000000
+[Cycle 133] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 134] Thread 6: x2 <- 0x00000000
+[Cycle 134] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 135] Thread 7: x2 <- 0x00000000
+[Cycle 135] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 136] Thread 8: x2 <- 0x00000000
+[Cycle 136] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 137] Thread 9: x2 <- 0x00000000
+[Cycle 137] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 138] Thread 10: x2 <- 0x00000000
+[Cycle 138] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 139] Thread 11: x2 <- 0x00000000
+[Cycle 139] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 140] Thread 12: x2 <- 0x00000000
+[Cycle 141] Thread 13: x2 <- 0x00000000
+[Cycle 142] Thread 14: x2 <- 0x00000000
+[Cycle 143] Thread 15: x2 <- 0x00000000
+[Cycle 144] Thread 0: x2 <- 0x00000000
+[Cycle 145] Thread 1: x2 <- 0x00000000
+[Cycle 146] Thread 2: x2 <- 0x00000000
+[Cycle 147] Thread 3: x2 <- 0x00000000
+[Cycle 148] Thread 4: x2 <- 0x00000000
+[Cycle 149] Thread 5: x2 <- 0x00000000
+[Cycle 150] Thread 6: x2 <- 0x00000000
+[Cycle 151] Thread 7: x2 <- 0x00000000
+[Cycle 152] Thread 8: x2 <- 0x00000000
+[Cycle 153] Thread 9: x2 <- 0x00000000
+[Cycle 154] Thread 10: x2 <- 0x00000000
+[Cycle 155] Thread 11: x2 <- 0x00000000
+[Cycle 156] Thread 12: x2 <- 0x00000000
+[Cycle 157] Thread 13: x2 <- 0x00000000
+[Cycle 158] Thread 14: x2 <- 0x00000000
+[Cycle 159] Thread 15: x2 <- 0x00000000
+[Cycle 172] MMIO READ:  byte_offset=0x00  -> 0x0000a103
+[Cycle 173] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 174] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 175] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 176] Thread 0: x2 <- 0x00000000
+[Cycle 176] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 177] Thread 1: x2 <- 0x00000000
+[Cycle 177] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 178] Thread 2: x2 <- 0x00000000
+[Cycle 178] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 179] Thread 3: x2 <- 0x00000000
+[Cycle 179] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 180] Thread 4: x2 <- 0x00000000
+[Cycle 180] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 181] Thread 5: x2 <- 0x00000000
+[Cycle 181] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 182] Thread 6: x2 <- 0x00000000
+[Cycle 182] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 183] Thread 7: x2 <- 0x00000000
+[Cycle 183] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 184] Thread 8: x2 <- 0x00000000
+[Cycle 184] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 185] Thread 9: x2 <- 0x00000000
+[Cycle 185] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 186] Thread 10: x2 <- 0x00000000
+[Cycle 186] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 187] Thread 11: x2 <- 0x00000000
+[Cycle 187] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 188] Thread 12: x2 <- 0x00000000
+[Cycle 189] Thread 13: x2 <- 0x00000000
+[Cycle 190] Thread 14: x2 <- 0x00000000
+[Cycle 191] Thread 15: x2 <- 0x00000000
+[Cycle 192] Thread 0: x2 <- 0x00000000
+[Cycle 193] Thread 1: x2 <- 0x00000000
+[Cycle 194] Thread 2: x2 <- 0x00000000
+[Cycle 195] Thread 3: x2 <- 0x00000000
+[Cycle 196] Thread 4: x2 <- 0x00000000
+[Cycle 197] Thread 5: x2 <- 0x00000000
+[Cycle 198] Thread 6: x2 <- 0x00000000
+[Cycle 199] Thread 7: x2 <- 0x00000000
+[Cycle 200] Thread 8: x2 <- 0x00000000
+[Cycle 201] Thread 9: x2 <- 0x00000000
+[Cycle 202] Thread 10: x2 <- 0x00000000
+[Cycle 203] Thread 11: x2 <- 0x00000000
+[Cycle 204] Thread 12: x2 <- 0x00000000
+[Cycle 205] Thread 13: x2 <- 0x00000000
+[Cycle 206] Thread 14: x2 <- 0x00000000
+[Cycle 207] Thread 15: x2 <- 0x00000000
+[Cycle 220] MMIO READ:  byte_offset=0x00  -> 0x0000a103
+[Cycle 221] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 222] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 223] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 224] Thread 0: x2 <- 0x00000000
+[Cycle 224] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 225] Thread 1: x2 <- 0x00000000
+[Cycle 225] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 226] Thread 2: x2 <- 0x00000000
+[Cycle 226] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 227] Thread 3: x2 <- 0x00000000
+[Cycle 227] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 228] Thread 4: x2 <- 0x00000000
+[Cycle 228] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 229] Thread 5: x2 <- 0x00000000
+[Cycle 229] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 230] Thread 6: x2 <- 0x00000000
+[Cycle 230] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 231] Thread 7: x2 <- 0x00000000
+[Cycle 231] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 232] Thread 8: x2 <- 0x00000000
+[Cycle 232] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 233] Thread 9: x2 <- 0x00000000
+[Cycle 233] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 234] Thread 10: x2 <- 0x00000000
+[Cycle 234] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 235] Thread 11: x2 <- 0x00000000
+[Cycle 235] MMIO READ:  byte_offset=0x00  -> 0x00000000
+[Cycle 236] Thread 12: x2 <- 0x00000000
+[Cycle 237] Thread 13: x2 <- 0x00000000
+[Cycle 238] Thread 14: x2 <- 0x00000000
+[Cycle 239] Thread 15: x2 <- 0x00000000
+[Cycle 240] Thread 0: x2 <- 0x00000000
+[Cycle 241] Thread 1: x2 <- 0x00000000
+[Cycle 242] Thread 2: x2 <- 0x00000000
+[Cycle 243] Thread 3: x2 <- 0x00000000
+[Cycle 244] Thread 4: x2 <- 0x00000000
+[Cycle 245] Thread 5: x2 <- 0x00000000
+[Cycle 246] Thread 6: x2 <- 0x00000000
+[Cycle 247] Thread 7: x2 <- 0x00000000
+[Cycle 248] Thread 8: x2 <- 0x00000000
+[Cycle 249] Thread 9: x2 <- 0x00000000
+[Cycle 250] Thread 10: x2 <- 0x00000000
+[Cycle 251] Thread 11: x2 <- 0x00000000
+[Cycle 252] Thread 12: x2 <- 0x00000000
+[Cycle 253] Thread 13: x2 <- 0x00000000
+[Cycle 254] Thread 14: x2 <- 0x00000000
+[Cycle 255] Thread 15: x2 <- 0x00000000
+
+[Cycle 256] MAILBOX: freelist init done, mailbox ready
+
+[Cycle 268] MMIO READ:  byte_offset=0x00  -> 0x0000a103
+[Cycle 269] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 270] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 271] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 272] Thread 0: x2 <- 0x00000005
+[Cycle 272] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 273] Thread 1: x2 <- 0x00000005
+[Cycle 273] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 274] Thread 2: x2 <- 0x00000005
+[Cycle 274] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 275] Thread 3: x2 <- 0x00000005
+[Cycle 275] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 276] Thread 4: x2 <- 0x00000005
+[Cycle 276] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 277] Thread 5: x2 <- 0x00000005
+[Cycle 277] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 278] Thread 6: x2 <- 0x00000005
+[Cycle 278] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 279] Thread 7: x2 <- 0x00000005
+[Cycle 279] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 280] Thread 8: x2 <- 0x00000005
+[Cycle 280] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 281] Thread 9: x2 <- 0x00000005
+[Cycle 281] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 282] Thread 10: x2 <- 0x00000005
+[Cycle 282] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 283] Thread 11: x2 <- 0x00000005
+[Cycle 283] MMIO READ:  byte_offset=0x00  -> 0x00000005
+[Cycle 284] Thread 12: x2 <- 0x00000005
+[Cycle 285] Thread 13: x2 <- 0x00000005
+[Cycle 286] Thread 14: x2 <- 0x00000005
+[Cycle 287] Thread 15: x2 <- 0x00000005
+[Cycle 288] Thread 0: x2 <- 0x00000004
+[Cycle 289] Thread 1: x2 <- 0x00000004
+[Cycle 290] Thread 2: x2 <- 0x00000004
+[Cycle 291] Thread 3: x2 <- 0x00000004
+[Cycle 292] Thread 4: x2 <- 0x00000004
+[Cycle 293] Thread 5: x2 <- 0x00000004
+[Cycle 294] Thread 6: x2 <- 0x00000004
+[Cycle 295] Thread 7: x2 <- 0x00000004
+[Cycle 296] Thread 8: x2 <- 0x00000004
+[Cycle 297] Thread 9: x2 <- 0x00000004
+[Cycle 298] Thread 10: x2 <- 0x00000004
+[Cycle 299] Thread 11: x2 <- 0x00000004
+[Cycle 300] Thread 12: x2 <- 0x00000004
+[Cycle 301] Thread 13: x2 <- 0x00000004
+[Cycle 302] Thread 14: x2 <- 0x00000004
+[Cycle 303] Thread 15: x2 <- 0x00000004
+[Cycle 320] Thread 0: x3 <- 0x00000003
+[Cycle 321] Thread 1: x3 <- 0x00000003
+[Cycle 322] Thread 2: x3 <- 0x00000003
+[Cycle 323] Thread 3: x3 <- 0x00000003
+[Cycle 324] Thread 4: x3 <- 0x00000003
+[Cycle 325] Thread 5: x3 <- 0x00000003
+[Cycle 326] Thread 6: x3 <- 0x00000003
+[Cycle 327] Thread 7: x3 <- 0x00000003
+[Cycle 328] Thread 8: x3 <- 0x00000003
+[Cycle 329] Thread 9: x3 <- 0x00000003
+[Cycle 330] Thread 10: x3 <- 0x00000003
+[Cycle 331] Thread 11: x3 <- 0x00000003
+[Cycle 332] Thread 12: x3 <- 0x00000003
+[Cycle 332] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 333] Thread 13: x3 <- 0x00000003
+[Cycle 333] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 334] Thread 14: x3 <- 0x00000003
+[Cycle 334] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 335] Thread 15: x3 <- 0x00000003
+[Cycle 335] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 336] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 337] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 338] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 339] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 340] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 341] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 342] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 343] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 344] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 345] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 346] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 347] MMIO WRITE: byte_offset=0x04  data=0x00000003
+[Cycle 352] Thread 0: x3 <- 0x00000042
+[Cycle 353] Thread 1: x3 <- 0x00000042
+[Cycle 354] Thread 2: x3 <- 0x00000042
+[Cycle 355] Thread 3: x3 <- 0x00000042
+[Cycle 356] Thread 4: x3 <- 0x00000042
+[Cycle 357] Thread 5: x3 <- 0x00000042
+[Cycle 358] Thread 6: x3 <- 0x00000042
+[Cycle 359] Thread 7: x3 <- 0x00000042
+[Cycle 360] Thread 8: x3 <- 0x00000042
+[Cycle 361] Thread 9: x3 <- 0x00000042
+[Cycle 362] Thread 10: x3 <- 0x00000042
+[Cycle 363] Thread 11: x3 <- 0x00000042
+[Cycle 364] Thread 12: x3 <- 0x00000042
+[Cycle 364] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 365] Thread 13: x3 <- 0x00000042
+[Cycle 365] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 366] Thread 14: x3 <- 0x00000042
+[Cycle 366] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 367] Thread 15: x3 <- 0x00000042
+[Cycle 367] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 368] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 369] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 370] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 371] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 372] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 373] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 374] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 375] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 376] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 377] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 378] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 379] MMIO WRITE: byte_offset=0x08  data=0x00000042
+[Cycle 384] Thread 0: x3 <- 0x00000001
+[Cycle 385] Thread 1: x3 <- 0x00000001
+[Cycle 386] Thread 2: x3 <- 0x00000001
+[Cycle 387] Thread 3: x3 <- 0x00000001
+[Cycle 388] Thread 4: x3 <- 0x00000001
+[Cycle 389] Thread 5: x3 <- 0x00000001
+[Cycle 390] Thread 6: x3 <- 0x00000001
+[Cycle 391] Thread 7: x3 <- 0x00000001
+[Cycle 392] Thread 8: x3 <- 0x00000001
+[Cycle 393] Thread 9: x3 <- 0x00000001
+[Cycle 394] Thread 10: x3 <- 0x00000001
+[Cycle 395] Thread 11: x3 <- 0x00000001
+[Cycle 396] Thread 12: x3 <- 0x00000001
+[Cycle 396] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 397] Thread 13: x3 <- 0x00000001
+[Cycle 397] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 398] Thread 14: x3 <- 0x00000001
+[Cycle 398] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 399] Thread 15: x3 <- 0x00000001
+[Cycle 399] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 400] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 401] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 402] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+
+[Cycle 403] TB-NET DRAIN  #0: dest=3  len=0x42  slot=0
+[Cycle 403] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 404] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 405] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 406] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 407] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 408] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 409] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 410] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 411] MMIO WRITE: byte_offset=0x0c  data=0x00000001
+[Cycle 412] TB-NET INJECT #0: len=0x42  slot=0  â†’ rxq
+
+[Cycle 413] MAILBOX IRQ_RX: incoming RX descriptor available
+
+[Cycle 415] TB-NET DRAIN  #1: dest=3  len=0x42  slot=1
+[Cycle 424] TB-NET INJECT #1: len=0x42  slot=1  â†’ rxq
+
+
+[Cycle 427] TB-NET DRAIN  #2: dest=3  len=0x42  slot=2
+[Cycle 436] TB-NET INJECT #2: len=0x42  slot=2  â†’ rxq
+
+
+[Cycle 439] TB-NET DRAIN  #3: dest=3  len=0x42  slot=3
+[Cycle 448] TB-NET INJECT #3: len=0x42  slot=3  â†’ rxq
+
+[Cycle 540] MMIO READ:  byte_offset=0x0c  -> 0x000080b7
+[Cycle 541] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 542] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 543] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 544] Thread 0: x4 <- 0x00000003
+[Cycle 544] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 545] Thread 1: x4 <- 0x00000003
+[Cycle 545] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 546] Thread 2: x4 <- 0x00000003
+[Cycle 546] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 547] Thread 3: x4 <- 0x00000003
+[Cycle 547] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 548] Thread 4: x4 <- 0x00000003
+[Cycle 548] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 549] Thread 5: x4 <- 0x00000003
+[Cycle 549] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 550] Thread 6: x4 <- 0x00000003
+[Cycle 550] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 551] Thread 7: x4 <- 0x00000003
+[Cycle 551] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 552] Thread 8: x4 <- 0x00000003
+[Cycle 552] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 553] Thread 9: x4 <- 0x00000003
+[Cycle 553] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 554] Thread 10: x4 <- 0x00000003
+[Cycle 554] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 555] Thread 11: x4 <- 0x00000003
+[Cycle 555] MMIO READ:  byte_offset=0x0c  -> 0x00000003
+[Cycle 556] Thread 12: x4 <- 0x00000003
+[Cycle 557] Thread 13: x4 <- 0x00000003
+[Cycle 558] Thread 14: x4 <- 0x00000003
+[Cycle 559] Thread 15: x4 <- 0x00000003
+[Cycle 560] Thread 0: x6 <- 0x00000000
+[Cycle 561] Thread 1: x6 <- 0x00000000
+[Cycle 562] Thread 2: x6 <- 0x00000000
+[Cycle 563] Thread 3: x6 <- 0x00000000
+[Cycle 564] Thread 4: x6 <- 0x00000000
+[Cycle 565] Thread 5: x6 <- 0x00000000
+[Cycle 566] Thread 6: x6 <- 0x00000000
+[Cycle 567] Thread 7: x6 <- 0x00000000
+[Cycle 568] Thread 8: x6 <- 0x00000000
+[Cycle 569] Thread 9: x6 <- 0x00000000
+[Cycle 570] Thread 10: x6 <- 0x00000000
+[Cycle 571] Thread 11: x6 <- 0x00000000
+[Cycle 572] Thread 12: x6 <- 0x00000000
+[Cycle 573] Thread 13: x6 <- 0x00000000
+[Cycle 574] Thread 14: x6 <- 0x00000000
+[Cycle 575] Thread 15: x6 <- 0x00000000
+[Cycle 592] Thread 0: x5 <- 0x00000003
+[Cycle 593] Thread 1: x5 <- 0x00000003
+[Cycle 594] Thread 2: x5 <- 0x00000003
+[Cycle 595] Thread 3: x5 <- 0x00000003
+[Cycle 596] Thread 4: x5 <- 0x00000003
+[Cycle 597] Thread 5: x5 <- 0x00000003
+[Cycle 598] Thread 6: x5 <- 0x00000003
+[Cycle 599] Thread 7: x5 <- 0x00000003
+[Cycle 600] Thread 8: x5 <- 0x00000003
+[Cycle 601] Thread 9: x5 <- 0x00000003
+[Cycle 602] Thread 10: x5 <- 0x00000003
+[Cycle 603] Thread 11: x5 <- 0x00000003
+[Cycle 604] Thread 12: x5 <- 0x00000003
+[Cycle 604] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 605] Thread 13: x5 <- 0x00000003
+[Cycle 605] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 606] Thread 14: x5 <- 0x00000003
+[Cycle 606] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 607] Thread 15: x5 <- 0x00000003
+[Cycle 607] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 608] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 609] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 610] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 611] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 612] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 613] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 614] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 615] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 616] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 617] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 618] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 619] MMIO WRITE: byte_offset=0x14  data=0x00000003
+[Cycle 624] Thread 0: x7 <- 0x000003fc
+[Cycle 625] Thread 1: x7 <- 0x000003fc
+[Cycle 626] Thread 2: x7 <- 0x000003fc
+[Cycle 627] Thread 3: x7 <- 0x000003fc
+[Cycle 628] Thread 4: x7 <- 0x000003fc
+[Cycle 629] Thread 5: x7 <- 0x000003fc
+[Cycle 630] Thread 6: x7 <- 0x000003fc
+[Cycle 631] Thread 7: x7 <- 0x000003fc
+[Cycle 632] Thread 8: x7 <- 0x000003fc
+[Cycle 633] Thread 9: x7 <- 0x000003fc
+[Cycle 634] Thread 10: x7 <- 0x000003fc
+[Cycle 635] Thread 11: x7 <- 0x000003fc
+[Cycle 636] Thread 12: x7 <- 0x000003fc
+[Cycle 637] Thread 13: x7 <- 0x000003fc
+[Cycle 638] Thread 14: x7 <- 0x000003fc
+[Cycle 639] Thread 15: x7 <- 0x000003fc
+[Cycle 640] Thread 0: x6 <- 0x00000001
+[Cycle 641] Thread 1: x6 <- 0x00000001
+[Cycle 642] Thread 2: x6 <- 0x00000001
+[Cycle 643] Thread 3: x6 <- 0x00000001
+[Cycle 644] Thread 4: x6 <- 0x00000001
+[Cycle 645] Thread 5: x6 <- 0x00000001
+[Cycle 646] Thread 6: x6 <- 0x00000001
+[Cycle 647] Thread 7: x6 <- 0x00000001
+[Cycle 648] Thread 8: x6 <- 0x00000001
+[Cycle 649] Thread 9: x6 <- 0x00000001
+[Cycle 650] Thread 10: x6 <- 0x00000001
+[Cycle 651] Thread 11: x6 <- 0x00000001
+[Cycle 652] Thread 12: x6 <- 0x00000001
+[Cycle 652] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 652
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 653] Thread 13: x6 <- 0x00000001
+[Cycle 653] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 653
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 654] Thread 14: x6 <- 0x00000001
+[Cycle 654] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 654
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 655] Thread 15: x6 <- 0x00000001
+[Cycle 655] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 655
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 656] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 656
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 657] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 657
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 658] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 658
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 659] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 659
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 660] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 660
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 661] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 661
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 662] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 662
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 663] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 663
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 664] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 664
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 665] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 665
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 666] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 666
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+[Cycle 667] MEM WRITE:  addr=0x00ff  data=0x00000001  we=0b1111
+
+--------------------------------------------
+  TEST PASSED at cycle 667
+  Mailbox loopback verified successfully.
+--------------------------------------------
+
+$finish called at time : 10165 ns : File "C:/briski_files/RISCV_core_top_tb.sv" Line 339

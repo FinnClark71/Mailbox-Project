@@ -1,0 +1,210 @@
+---------------------------------------------
+  BRISKI 2Core 2Mailbox Testbench - Test 9
+  Bidirectional ALU Shift-Multiply Ping-Pong
+---------------------------------------------
+
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 7459.000 ; gain = 0.000
+run 5 ms
+[Cycle 0] Reset - both cores running
+  Core 0: sender/verifier (test9_core0.hex)
+  Core 1: receiver/replier (test9_core1.hex)
+
+
+[Cycle 256] CORE0 mailbox: freelist init done
+
+
+[Cycle 256] CORE1 mailbox: freelist init done
+
+[Cycle 336] C0  x4 (accumulator) <- 0x00000088
+[Cycle 368] C0  x4 (accumulator) <- 0x000000cc
+[Cycle 384] C0  x4 (accumulator) <- 0x000000dd
+[Cycle 400] C0  x4 (accumulator) <- 0x00000077
+[Cycle 428] C0  TX_DEST  = 1
+[Cycle 429] C0  TX_DEST  = 1
+[Cycle 430] C0  TX_DEST  = 1
+[Cycle 431] C0  TX_DEST  = 1
+[Cycle 432] C0  TX_DEST  = 1
+[Cycle 433] C0  TX_DEST  = 1
+[Cycle 434] C0  TX_DEST  = 1
+[Cycle 435] C0  TX_DEST  = 1
+[Cycle 436] C0  TX_DEST  = 1
+[Cycle 437] C0  TX_DEST  = 1
+[Cycle 438] C0  TX_DEST  = 1
+[Cycle 439] C0  TX_DEST  = 1
+[Cycle 440] C0  TX_DEST  = 1
+[Cycle 441] C0  TX_DEST  = 1
+[Cycle 442] C0  TX_DEST  = 1
+[Cycle 443] C0  TX_DEST  = 1
+[Cycle 444] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 445] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 446] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 447] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 448] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 449] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 450] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 451] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 452] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 453] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 454] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 455] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 456] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 457] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 458] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 459] C0  TX_LEN   = 0x77 (17x13 XOR 0xAA)
+[Cycle 460] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 461] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 462] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 463] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 464] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 465] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 466] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 467] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 468] ROUTER C0->C1: {len=0x77, slot=0}
+[Cycle 468] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 469] CORE1 IRQ_RX: message from Core 0 arrived
+[Cycle 469] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 470] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 471] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 472] ROUTER C0->C1: {len=0x77, slot=1}
+[Cycle 472] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 473] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 474] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 475] C0  TX_SEND  -> mailbox FSM fires
+[Cycle 476] ROUTER C0->C1: {len=0x77, slot=2}
+[Cycle 480] ROUTER C0->C1: {len=0x77, slot=3}
+[Cycle 533] C1  RX_POP   -> reading received descriptor
+[Cycle 534] C1  RX_POP   -> reading received descriptor
+[Cycle 535] C1  RX_POP   -> reading received descriptor
+[Cycle 536] C1  RX_POP   -> reading received descriptor
+[Cycle 537] C1  RX_POP   -> reading received descriptor
+[Cycle 538] C1  RX_POP   -> reading received descriptor
+[Cycle 539] C1  RX_POP   -> reading received descriptor
+[Cycle 572] C1  RX_POP   -> reading received descriptor
+[Cycle 573] C1  RX_POP   -> reading received descriptor
+[Cycle 574] C1  RX_POP   -> reading received descriptor
+[Cycle 575] C1  RX_POP   -> reading received descriptor
+[Cycle 576] C1  RX_POP   -> reading received descriptor
+[Cycle 577] C1  RX_POP   -> reading received descriptor
+[Cycle 578] C1  RX_POP   -> reading received descriptor
+[Cycle 579] C1  RX_POP   -> reading received descriptor
+[Cycle 580] C1  RX_POP   -> reading received descriptor
+[Cycle 672] C1  x3 (received len) <- 0x00000077
+[Cycle 688] C1  x3 (received len) <- 0x00000077
+[Cycle 709] C1  REL_SLOT = 3
+[Cycle 710] C1  REL_SLOT = 3
+[Cycle 711] C1  REL_SLOT = 3
+[Cycle 712] C1  REL_SLOT = 3
+[Cycle 713] C1  REL_SLOT = 3
+[Cycle 714] C1  REL_SLOT = 3
+[Cycle 715] C1  REL_SLOT = 3
+[Cycle 748] C1  REL_SLOT = 3
+[Cycle 749] C1  REL_SLOT = 3
+[Cycle 750] C1  REL_SLOT = 3
+[Cycle 751] C1  REL_SLOT = 3
+[Cycle 752] C1  REL_SLOT = 3
+[Cycle 753] C1  REL_SLOT = 3
+[Cycle 754] C1  REL_SLOT = 3
+[Cycle 755] C1  REL_SLOT = 3
+[Cycle 756] C1  REL_SLOT = 3
+[Cycle 768] C1  x6 (computed reply) <- 0x000000ee
+[Cycle 784] C1  x6 (computed reply) <- 0x000000ee
+[Cycle 789] C1  TX_DEST  = 0
+[Cycle 790] C1  TX_DEST  = 0
+[Cycle 791] C1  TX_DEST  = 0
+[Cycle 792] C1  TX_DEST  = 0
+[Cycle 793] C1  TX_DEST  = 0
+[Cycle 794] C1  TX_DEST  = 0
+[Cycle 795] C1  TX_DEST  = 0
+[Cycle 800] C1  x6 (computed reply) <- 0x000000bb
+[Cycle 805] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 806] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 807] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 808] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 809] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 810] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 811] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 828] C1  TX_DEST  = 0
+[Cycle 829] C1  TX_DEST  = 0
+[Cycle 830] C1  TX_DEST  = 0
+[Cycle 831] C1  TX_DEST  = 0
+[Cycle 832] C1  TX_DEST  = 0
+[Cycle 833] C1  TX_DEST  = 0
+[Cycle 834] C1  TX_DEST  = 0
+[Cycle 835] C1  TX_DEST  = 0
+[Cycle 836] C1  TX_DEST  = 0
+[Cycle 837] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 838] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 839] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 840] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 841] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 842] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 843] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 844] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 845] ROUTER C1->C0: {len=0xbb, slot=0}
+[Cycle 845] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 846] CORE0 IRQ_RX: reply from Core 1 arrived
+[Cycle 846] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 847] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 848] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 849] ROUTER C1->C0: {len=0xbb, slot=1}
+[Cycle 849] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 850] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 851] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 852] C1  TX_LEN   = 0xbb (computed reply)
+[Cycle 869] core1 pass - received 0x77, replied 0xBB correctly
+[Cycle 876] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 877] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 878] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 879] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 880] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 881] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 882] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 883] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 884] ROUTER C1->C0: {len=0xbb, slot=2}
+[Cycle 884] C1  TX_SEND  -> reply dispatched to Core 0
+[Cycle 888] ROUTER C1->C0: {len=0xbb, slot=3}
+[Cycle 892] ROUTER C1->C0: {len=0xbb, slot=4}
+[Cycle 908] C0  RX_POP   -> reading reply descriptor
+[Cycle 909] C0  RX_POP   -> reading reply descriptor
+[Cycle 910] C0  RX_POP   -> reading reply descriptor
+[Cycle 911] C0  RX_POP   -> reading reply descriptor
+[Cycle 912] C0  RX_POP   -> reading reply descriptor
+[Cycle 913] C0  RX_POP   -> reading reply descriptor
+[Cycle 914] C0  RX_POP   -> reading reply descriptor
+[Cycle 915] C0  RX_POP   -> reading reply descriptor
+[Cycle 916] C0  RX_POP   -> reading reply descriptor
+[Cycle 917] C0  RX_POP   -> reading reply descriptor
+[Cycle 918] C0  RX_POP   -> reading reply descriptor
+[Cycle 919] C0  RX_POP   -> reading reply descriptor
+[Cycle 920] C0  RX_POP   -> reading reply descriptor
+[Cycle 921] C0  RX_POP   -> reading reply descriptor
+[Cycle 922] C0  RX_POP   -> reading reply descriptor
+[Cycle 923] C0  RX_POP   -> reading reply descriptor
+[Cycle 1008] C0  x6 (reply len)   <- 0x000000bb
+[Cycle 1024] C0  x6 (reply len)   <- 0x000000bb
+[Cycle 1084] C0  REL_SLOT = 4
+[Cycle 1085] C0  REL_SLOT = 4
+[Cycle 1086] C0  REL_SLOT = 4
+[Cycle 1087] C0  REL_SLOT = 4
+[Cycle 1088] C0  REL_SLOT = 4
+[Cycle 1089] C0  REL_SLOT = 4
+[Cycle 1090] C0  REL_SLOT = 4
+[Cycle 1091] C0  REL_SLOT = 4
+[Cycle 1092] C0  REL_SLOT = 4
+[Cycle 1093] C0  REL_SLOT = 4
+[Cycle 1094] C0  REL_SLOT = 4
+[Cycle 1095] C0  REL_SLOT = 4
+[Cycle 1096] C0  REL_SLOT = 4
+[Cycle 1097] C0  REL_SLOT = 4
+[Cycle 1098] C0  REL_SLOT = 4
+[Cycle 1099] C0  REL_SLOT = 4
+[Cycle 1132] core0 pass - reply 0xBB verified correctly
+
+---------------------------------------------
+  Test 9 passed
+  C0 computed 17x13=0xDD, XOR 0xAA -> sent 0x77
+  C1 received 0x77, replied (0x77<<1)^0x55 = 0xBB
+  C0 received 0xBB, both cores confirmed success
+----------------------------------------------
+
+$finish called at time : 14965 ns : File "C:/briski_files/RISCV_two_core_tb.sv" Line 272
